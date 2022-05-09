@@ -14,7 +14,9 @@ Tools Required:
 
 Workflow:
 
-1.- Fork https://github.com/timeoff-management/timeoff-management-application github repository.
-2.- Create a webhook, in the new repository.
-3.- Create a pipeline in Jenkins to pull .
-4.- 
+1. Fork https://github.com/timeoff-management/timeoff-management-application github repository.
+2. Create a webhook, in the new repository.
+3. Create a pipeline in Jenkins.
+  3.1. Set up pipeline to download the script https://github.com/cobbgcall/Deployment-TimeOff-Management.git/CreateArtifact/, this Jenkisfile, create a docker image according to Dockerfile in the timeoff-management-application repository, and pull to docker hub two version of it, one version with the build number as a tag, and other overwriting latest tag version.
+4. Set up webhoook in the docker hub repository cobbgcloud/timeoff.
+5. Create a second pipeline to create or update docker service. It should have set up https://github.com/cobbgcall/Deployment-TimeOff-Management.git/CreateArtifact/.
