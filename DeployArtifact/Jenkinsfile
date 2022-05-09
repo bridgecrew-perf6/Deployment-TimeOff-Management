@@ -1,0 +1,18 @@
+pipeline {
+
+    agent any
+    stages{
+        stage('DeployService') {
+            steps{
+                sh '''
+                docker service update --detach=true timeoff || docker service create --name timeoff --replicas=2 --update-delay 10s --update-parallelism 1 cobbgcloud/timeoff:latest 
+                '''
+            }
+        }
+    }
+}
+post {
+    cleanup {
+        cleanWs()
+    }
+}
