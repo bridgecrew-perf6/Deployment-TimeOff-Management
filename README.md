@@ -11,3 +11,10 @@ Tools Required:
 - Docker Engine
 - Github Account.
 - Docker Hub Account. 
+
+Workflow:
+
+1.- Fork https://github.com/timeoff-management/timeoff-management-application github repository.
+2.- Create a webhook, in the new repository.
+3.- Create a pipeline in Jenkins to pull .
+4.- 
